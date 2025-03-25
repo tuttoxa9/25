@@ -1,0 +1,213 @@
+/* Глобальные настройки темной темы */
+:root {
+  --slate-950: #020617;
+  --slate-900: #0f172a;
+  --slate-800: #1e293b;
+  --slate-700: #334155;
+  --slate-600: #475569;
+  --slate-500: #64748b;
+  --slate-400: #94a3b8;
+  --slate-300: #cbd5e1;
+  --slate-200: #e2e8f0;
+  --slate-100: #f1f5f9;
+
+  --blue-950: #172554;
+  --blue-900: #1e3a8a;
+  --blue-800: #1e40af;
+  --blue-700: #1d4ed8;
+  --blue-600: #2563eb;
+  --blue-500: #3b82f6;
+  --blue-400: #60a5fa;
+  --blue-300: #93c5fd;
+  --blue-200: #bfdbfe;
+  --blue-100: #dbeafe;
+  --blue-50: #eff6ff;
+}
+
+/* Базовые стили для темной темы */
+.dark {
+  color-scheme: dark;
+  --background: var(--slate-950);
+  --foreground: var(--slate-100);
+
+  --card: var(--slate-900);
+  --card-foreground: var(--slate-100);
+
+  --popover: var(--slate-900);
+  --popover-foreground: var(--slate-100);
+
+  --primary: var(--blue-600);
+  --primary-foreground: white;
+
+  --secondary: var(--slate-800);
+  --secondary-foreground: var(--slate-100);
+
+  --muted: var(--slate-800);
+  --muted-foreground: var(--slate-400);
+
+  --accent: var(--slate-800);
+  --accent-foreground: var(--slate-100);
+
+  --destructive: #b91c1c;
+  --destructive-foreground: var(--slate-100);
+
+  --border: var(--slate-700);
+  --input: var(--slate-700);
+  --ring: var(--blue-600);
+
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Улучшенные стили для компонентов в темной теме */
+.dark .card,
+.dark [role="dialog"],
+.dark [data-radix-popper-content] {
+  @apply bg-slate-900 border-slate-700 shadow-lg shadow-black/20;
+}
+
+/* Стили для таблиц в темном режиме */
+.dark table {
+  @apply bg-slate-900 border-slate-700;
+}
+
+.dark tr {
+  @apply border-slate-700;
+}
+
+.dark th {
+  @apply bg-slate-800 text-slate-200;
+}
+
+.dark td {
+  @apply text-slate-300 border-slate-700;
+}
+
+/* Стили для календаря в темном режиме */
+.dark [data-calendar] {
+  @apply bg-slate-900 text-slate-300 border-slate-700;
+}
+
+.dark [data-calendar] button {
+  @apply text-slate-300 hover:bg-slate-800;
+}
+
+.dark [data-calendar] button:disabled {
+  @apply text-slate-600;
+}
+
+.dark [data-calendar] button[data-selected] {
+  @apply bg-blue-600 text-white hover:bg-blue-700;
+}
+
+.dark [data-calendar] button[data-highlighted] {
+  @apply bg-slate-800;
+}
+
+/* Стили для диалоговых окон в темной теме */
+.dark [role="dialog"] {
+  @apply bg-slate-900 text-slate-200;
+}
+
+.dark [data-radix-dialog-overlay] {
+  @apply bg-black/40 backdrop-blur;
+}
+
+/* Стили для кнопок */
+.dark .button-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white;
+}
+
+.dark .button-secondary {
+  @apply bg-slate-800 hover:bg-slate-700 text-slate-200 border-slate-700;
+}
+
+.dark .button-ghost {
+  @apply text-slate-300 hover:bg-slate-800 hover:text-slate-100;
+}
+
+/* Стили для форм и инпутов */
+.dark select,
+.dark textarea,
+.dark input:not([type="checkbox"]):not([type="radio"]) {
+  @apply bg-slate-800 border-slate-700 text-slate-200 placeholder:text-slate-500;
+}
+
+.dark input:not([type="checkbox"]):not([type="radio"]):focus,
+.dark select:focus,
+.dark textarea:focus {
+  @apply border-blue-500 ring-blue-500/30;
+}
+
+.dark input[type="checkbox"],
+.dark input[type="radio"] {
+  @apply text-blue-600 border-slate-700 focus:ring-blue-500/30;
+}
+
+/* Стили для меток и бейджей */
+.dark label {
+  @apply text-slate-300;
+}
+
+.dark [data-badge] {
+  @apply border-slate-700;
+}
+
+.dark [data-badge="primary"] {
+  @apply bg-blue-600 text-white;
+}
+
+.dark [data-badge="secondary"] {
+  @apply bg-slate-800 text-slate-200;
+}
+
+/* Стили для выпадающих меню и списков */
+.dark [role="menu"],
+.dark [role="listbox"],
+.dark [data-radix-popper-content] {
+  @apply bg-slate-900 border-slate-700 shadow-lg shadow-black/20;
+}
+
+.dark [role="menuitem"],
+.dark [role="option"] {
+  @apply text-slate-300 hover:bg-slate-800;
+}
+
+.dark [role="menuitem"][data-highlighted],
+.dark [role="option"][data-highlighted] {
+  @apply bg-slate-800 text-slate-100;
+}
+
+/* Стили для тултипов */
+.dark [role="tooltip"] {
+  @apply bg-slate-900 text-slate-100 border-slate-700;
+}
+
+/* Стили для вкладок */
+.dark [role="tab"] {
+  @apply text-slate-400 hover:text-slate-300;
+}
+
+.dark [role="tab"][data-state="active"] {
+  @apply text-slate-100 border-blue-600;
+}
+
+.dark [role="tablist"] {
+  @apply border-slate-700;
+}
+
+/* Стили для scrollbar */
+.dark ::-webkit-scrollbar {
+  width: 10px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  @apply bg-slate-900;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-slate-700 rounded;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-600;
+}
